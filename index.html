@@ -89,7 +89,7 @@
 
     .eyebrow {
       color: var(--orange);
-      font-size: 12px;
+      font-size: 25px;
       letter-spacing: .18em;
       line-height: 1.4;
       text-transform: uppercase;
@@ -165,11 +165,35 @@
   letter-spacing: 1px;
 }
 
-    .identity-role {
-      color: var(--gray);
-      font-size: 11px;
-      letter-spacing: .02em;
-    }
+  .identity-role {
+  display: block;
+  min-height: 24px;
+  color: var(--gray);
+  font-size: 20px !important;
+  font-weight: 400;
+  letter-spacing: .02em;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+#roleText {
+  display: inline-block;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 20px;
+  margin-left: 5px;
+  background: var(--orange);
+  animation: cursorBlink .7s steps(1) infinite;
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
 
     .nav-links {
       display: flex;
@@ -390,15 +414,26 @@
       font-weight: 600;
     }
 
-    .hero-status {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      margin-top: 70px;
-      color: var(--gray-dark);
-      font-size: 11px;
-      letter-spacing: .15em;
-    }
+    
+.hero-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+  color: var(--white);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.hero-status span {
+  display: inline-block;
+  background: #063BA6;
+  color: #fff;
+  /* padding: 25px 30px; */
+  border-radius: 0;
+  font-weight: 500;
+}
 
     /* Floating center logo */
     .portrait-card {
@@ -821,7 +856,7 @@
       border-top: 1px solid var(--gray-dark);
 
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
+      grid-template-columns: 1.5fr 1.5fr;
       gap: 35px 50px;
       align-items: stretch;
     }
@@ -864,10 +899,12 @@
       background: #0b0b0b;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      /* justify-content: center; */
+
     }
 
     .footer-right h2 {
+      /* padding-top:70px ; */
       font-family: var(--display);
       font-size: clamp(55px, 6vw, 90px);
       line-height: 0.85;
@@ -875,6 +912,7 @@
     }
 
     .footer-right h2 span {
+      font-size: 150px;
       color: var(--orange);
     }
 
@@ -992,6 +1030,14 @@
         font-size: clamp(54px, 7vw, 76px);
       }
     }
+    .identity-role {
+  font-size: 16px;
+  min-height: 21px;
+}
+
+.typing-cursor {
+  height: 17px;
+}
 
     /* ================= MOBILE ================= */
     @media (max-width: 640px) {
@@ -1028,8 +1074,15 @@
       }
 
       .identity-role {
-        font-size: 9px;
-      }
+  font-size: 10px;
+  min-height: 14px;
+}
+
+.typing-cursor {
+  height: 11px;
+  width: 1.5px;
+  margin-left: 3px;
+}
 
       .btn-talk {
         min-height: 43px;
@@ -1109,12 +1162,20 @@
         font-size: 13px;
       }
 
-      .hero-status {
-        flex-direction: column;
-        gap: 9px;
-        margin-top: 38px;
-        font-size: 9px;
-      }
+    
+.hero-status {
+  flex-direction: column;
+  /* align-items: stretch; */
+  gap: 12px;
+  margin-top: 38px;
+  font-size: 12px;
+}
+
+.hero-status span {
+  /* padding: 18px 20px; */
+  text-align: center;
+}
+
 
       .section,
       .work {
@@ -1283,6 +1344,78 @@
         font-size: 9px;
       }
     }
+
+/* =====================================
+   DESKTOP HERO — FIT NORMAL SCREEN
+   ===================================== */
+
+@media (min-width: 1025px) {
+
+  .hero {
+    padding: 24px 0 28px;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+  }
+
+  .hero-spread {
+    margin-top: 22px;
+  }
+
+  .portrait-card,
+  .identity-panel {
+    min-height: clamp(420px, calc(100svh - 247px), 500px);
+  }
+
+  .portrait-card {
+    padding: 20px 24px;
+  }
+
+  .identity-panel {
+    padding: clamp(28px, 3vw, 45px);
+  }
+
+  .identity-panel h1 {
+    margin-top: 20px;
+    font-size: clamp(54px, 5.2vw, 76px);
+  }
+
+  .identity-panel .role {
+    margin-top: 16px;
+    font-size: clamp(21px, 2vw, 30px);
+  }
+
+  .identity-panel .lead {
+    margin-top: 16px;
+    font-size: clamp(17px, 1.55vw, 23px);
+  }
+
+  .identity-panel .body-copy {
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero-logo {
+    width: clamp(180px, 18vw, 230px);
+    height: auto;
+  }
+
+  .hero-status {
+    margin-top: 22px;
+    font-size: 12px;
+    gap: 12px;
+  }
+
+  .hero-status span {
+    padding: 10px 14px;
+  }
+  .identity-role {
+  font-size: 9px;
+}
+}
+
   </style>
 </head>
 
@@ -1293,8 +1426,11 @@
       <a class="identity" href="#top" aria-label="Go to home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="identity-text">
-          <span class="identity-name">[NITIN KANTH]</span>
-          <span class="identity-role">FREELANCE DESIGNER</span>
+          <span class="identity-name">NITIN KANTH</span>
+          <span class="identity-role">
+  <span id="roleText">WEB DESIGNER</span>
+  <span class="typing-cursor"></span>
+</span>
         </span>
       </a>
 
@@ -1682,6 +1818,63 @@
     } else {
       document.querySelectorAll(".reveal").forEach(element => element.classList.add("is-visible"));
     }
+
+// =====================================
+// DESIGNATION TYPING ANIMATION
+// =====================================
+
+const roleText = document.getElementById("roleText");
+
+const roles = [
+  "WEB DESIGNER",
+  "POSTER DESIGNER",
+  "FLEX EDITOR"
+];
+
+let roleIndex = 0;
+let characterIndex = roles[0].length;
+let isDeleting = true;
+
+const typingSpeed = 110;
+const deletingSpeed = 55;
+const pauseAfterTyping = 1400;
+const pauseAfterDeleting = 350;
+
+function animateRole() {
+  const currentRole = roles[roleIndex];
+
+  if (isDeleting) {
+    characterIndex--;
+    roleText.textContent = currentRole.substring(0, characterIndex);
+
+    if (characterIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+
+      setTimeout(animateRole, pauseAfterDeleting);
+      return;
+    }
+
+    setTimeout(animateRole, deletingSpeed);
+  } else {
+    const nextRole = roles[roleIndex];
+
+    characterIndex++;
+    roleText.textContent = nextRole.substring(0, characterIndex);
+
+    if (characterIndex === nextRole.length) {
+      isDeleting = true;
+      setTimeout(animateRole, pauseAfterTyping);
+      return;
+    }
+
+    setTimeout(animateRole, typingSpeed);
+  }
+}
+
+// Start animation after the initial text is displayed.
+setTimeout(animateRole, pauseAfterTyping);
+
   </script>
 </body>
 
