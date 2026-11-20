@@ -741,7 +741,8 @@
     /* ================= CONTACT ================= */
     .contact-body {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+      /* grid-template-columns: 1fr,1fr; */
       gap: clamp(38px, 6vw, 88px);
       margin-top: 48px;
       align-items: start;
@@ -754,6 +755,7 @@
     }
 
     .contact-details ul {
+      /* font-size: 100px; */
       display: flex;
       flex-direction: column;
       gap: 14px;
@@ -763,7 +765,9 @@
     }
 
     .contact-details li {
-      font-size: 17px;
+      margin-top: 0;
+      padding-top: 0;
+      font-size: 25px;
     }
 
     .contact-details li.small {
@@ -1608,7 +1612,7 @@
         <span class="identity-text">
           <span class="identity-name">NITIN KANTH</span>
           <span class="identity-role">
-  <span id="roleText">WEB DESIGNER</span>
+  <span id="roleText">GRAPHIC DESIGNER</span>
   <span class="typing-cursor"></span>
 </span>
         </span>
@@ -1848,16 +1852,17 @@
     <!-- CONTACT -->
     <section class="section page" id="contact">
       <div class="eyebrow">05 / OPEN FOR GOOD COLLABORATIONS</div>
-      <h2 class="display big" style="color:var(--orange);margin-top:18px">LET’S CREATE SOMETHING BOLD.</h2>
+      
 
       <div class="contact-body">
         <div class="contact-details">
+          <h2 class="display big" style="color:var(--orange);margin-top:18px;font-size: 85px;">LET’S CREATE SOMETHING BOLD.</h2>
           <div class="lead">Have a project in mind or looking for a creative designer? Let’s connect and bring your
             ideas to life.</div>
           <ul>
-            <li>[EMAIL ADDRESS]</li>
-            <li>9585249275</li>
-            <li class="small"><a href="https://www.instagram.com/diva_.oxo/?hl=en">diva_.oxo</a></li>
+            <li style="font-size: 25px; color: var(--orange);">Nitinkanth4@gmail.com</li>
+            <li style="font-size: 20px; color: var(--orange);">9585249275</li>
+            <li class="small" style="font-size: 20px; color: #063BA6;"><a href="https://www.instagram.com/diva_.oxo/?hl=en">diva_.oxo</a></li>
           </ul>
         </div>
 
@@ -1882,7 +1887,7 @@
     <div class="footer-left">
 
       <div>
-        <div class="name">[NITIN KANTH]</div>
+        <div class="name">[NITIN KANTH</div>
 
         <div class="small muted-small">
           GRAPHIC DESIGNER & WEB DESIGNER
@@ -1906,7 +1911,7 @@
         </p>
 
         <p class="small muted-small" style="margin-top:25px;">
-          © 2026 [NITIN KANTH]. ALL RIGHTS RESERVED.
+          © 2026 Nitin kanth. ALL RIGHTS RESERVED.
         </p>
       </div>
 
@@ -2038,16 +2043,17 @@
 const roleText = document.getElementById("roleText");
 
 const roles = [
-  "WEB DESIGNER",
+  "GRAPHIC DESIGNER",
   "POSTER DESIGNER",
-  "FLEX EDITOR"
+  "LOGO DESIGNER"
+
 ];
 
 let roleIndex = 0;
 let characterIndex = roles[0].length;
 let isDeleting = true;
 
-const typingSpeed = 110;
+const typingSpeed = 200;
 const deletingSpeed = 55;
 const pauseAfterTyping = 1400;
 const pauseAfterDeleting = 350;
@@ -2156,7 +2162,7 @@ document.addEventListener("keydown", event => {
   if (event.key === "ArrowLeft") showGalleryImage(currentImage - 1);
 });
 
-  </script>
+</script>
 </body>
 
 </html>
